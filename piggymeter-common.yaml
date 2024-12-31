@@ -20,7 +20,7 @@ wifi:
       password: !secret wifi_pass
   # Optional domain
   # domain: .lan
-  
+
 #api:
 #  encryption:
 #    key: !secret api_key
@@ -31,6 +31,8 @@ ota:
 
 web_server:
   port: 80
+
+prometheus:
 
 mqtt:
   broker: !secret mqtt_broker
