@@ -84,7 +84,35 @@ iec62056:
 
 sensor:
   - platform: iec62056
-    obis: 1-0:15.8.0
+    obis: 0.0.0
+    name: Serial number
+    state_class: measurement
+
+  - platform: iec62056
+    obis: 0.8.0
+    name: Demand period
+    device_class: duration
+    state_class: measurement
+
+#  - platform: iec62056
+#    obis: 0.9.1
+#    name: Current time
+#    device_class: timestamp
+#    state_class: measurement
+
+#  - platform: iec62056
+#    obis: 0.9.2
+#    name: Current date
+#    device_class: date
+#    state_class: measurement
+
+  - platform: iec62056
+    obis: 0.9.5
+    name: Day of the week
+    state_class: measurement
+
+  - platform: iec62056
+    obis: 1.8.0
     name: Absolute active energy total
     unit_of_measurement: kWh
     accuracy_decimals: 3
@@ -92,73 +120,124 @@ sensor:
     state_class: total_increasing
 
   - platform: iec62056
-    name: Instantaneous current in phase L1
-    obis: 1-0:31.7.0
+    obis: 1.8.1
+    name: Absolute active energy tariff 1
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.2
+    name: Absolute active energy tariff 2
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.0*1
+    name: Absolute active energy total, period 1
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.1*1
+    name: Absolute active energy tariff 1, period 1
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.2*1
+    name: Absolute active energy tariff 2, period 1
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.0*2
+    name: Absolute active energy total, period 2
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.1*2
+    name: Absolute active energy tariff 1, period 2
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    obis: 1.8.2*2
+    name: Absolute active energy tariff 2, period 2
+    unit_of_measurement: kWh
+    accuracy_decimals: 3
+    device_class: energy
+    state_class: total_increasing
+
+  - platform: iec62056
+    name: Max demand
+    obis: 1.6.0
+    unit_of_measurement: kW
+    accuracy_decimals: 3
+    device_class: power
+    state_class: total
+
+  - platform: iec62056
+    name: Max demand, period 1
+    obis: 1.6.0*1
+    unit_of_measurement: kW
+    accuracy_decimals: 3
+    device_class: power
+    state_class: total
+
+  - platform: iec62056
+    name: Max demand, period 2
+    obis: 1.6.0*2
+    unit_of_measurement: kW
+    accuracy_decimals: 3
+    device_class: power
+    state_class: total
+
+  - platform: iec62056
+    name: Instantaneous current
+    obis: 31.7.0
     unit_of_measurement: A
     accuracy_decimals: 2
     device_class: current
     state_class: measurement
 
   - platform: iec62056
-    name: Instantaneous current in phase L2
-    obis: 1-0:51.7.0
-    unit_of_measurement: A
-    accuracy_decimals: 2
-    device_class: current
-    state_class: measurement
-
-  - platform: iec62056
-    name: Instantaneous current in phase L3
-    obis: 1-0:71.7.0
-    unit_of_measurement: A
-    accuracy_decimals: 2
-    device_class: current
-    state_class: measurement
-
-  - platform: iec62056
-    name: Instantaneous voltage in phase L1
-    obis: 1-0:32.7.0
+    name: Instantaneous voltage
+    obis: 32.7.0
     unit_of_measurement: V
     accuracy_decimals: 1
     device_class: voltage
     state_class: measurement
 
-  - platform: iec62056
-    name: Instantaneous voltage in phase L2
-    obis: 1-0:52.7.0
-    unit_of_measurement: V
-    accuracy_decimals: 1
-    device_class: voltage
-    state_class: measurement
+# vendor-specific start
+#  - platform: iec62056
+#    obis: '96.71'
+#    name: Current period start
+#    device_class: date
+#    state_class: measurement
 
-  - platform: iec62056
-    name: Instantaneous voltage in phase L3
-    obis: 1-0:72.7.0
-    unit_of_measurement: V
-    accuracy_decimals: 1
-    device_class: voltage
-    state_class: measurement
+#  - platform: iec62056
+#    obis: 96.71*1
+#    name: Period 1 start
+#    device_class: date
+#    state_class: measurement
 
-  - platform: iec62056
-    name: Positive active instantaneous power
-    obis: 1-0:1.7.0
-    unit_of_measurement: kW
-    accuracy_decimals: 3
-    device_class: energy
-    state_class: measurement
-
-  - platform: iec62056
-    name: Absolute active instantaneous power
-    obis: 1-0:15.7.0
-    unit_of_measurement: kW
-    accuracy_decimals: 3
-    device_class: energy
-    state_class: measurement
-
-  - platform: iec62056
-    name: Absolute active maximum demand total
-    obis: 1-0:15.6.0
-    unit_of_measurement: kW
-    accuracy_decimals: 3
-    device_class: energy
-    state_class: measurement
+#  - platform: iec62056
+#    obis: 96.71*2
+#    name: Period 2 start
+#    device_class: date
+#    state_class: measurement
